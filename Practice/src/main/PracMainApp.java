@@ -3,6 +3,11 @@
  */
 package main;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 /**
  * @author mku106
  * 
@@ -83,7 +88,7 @@ public class PracMainApp {
 		
 		Employee emp=new Employee();
 	//System.out.println(emp.sum(15,20,21,35,12,25,12));	
-	*/
+	
 		
 		Apple ap;
 		Apple all[]= Apple.values();
@@ -93,6 +98,25 @@ public class PracMainApp {
 		
 		ap= Apple.valueOf("RedDel");
 		System.out.println("ap constraints "+ap);
+		*/
+		//FileInputStream in;
+		//FileOutputStream out;
+		
+		try(
+			FileInputStream in = new FileInputStream("sapin.txt");
+			FileOutputStream out = new FileOutputStream("sapout.txt");
+		)
+		{
+			int c;
+			while((c=in.read())!=-1)
+				out.write(c);
+			
+			
+			
+		} catch (  IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
